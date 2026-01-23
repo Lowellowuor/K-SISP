@@ -42,12 +42,16 @@ function CitizenDataPage() {
     { id: 'response', icon: Clock, label: 'Response', color: 'text-blue-400', description: 'Service metrics' },
   ];
 
+  // Updated with real Kibera village names
   const zones = [
-    { id: 'all', label: 'All Zones', color: 'bg-emerald-500' },
-    { id: 'north', label: 'North Zone', color: 'bg-green-500' },
-    { id: 'south', label: 'South Zone', color: 'bg-teal-500' },
-    { id: 'east', label: 'East Zone', color: 'bg-amber-500' },
-    { id: 'west', label: 'West Zone', color: 'bg-emerald-600' },
+    { id: 'all', label: 'All Villages', color: 'bg-emerald-500' },
+    { id: 'kianda', label: 'Kianda Village', color: 'bg-green-500' },
+    { id: 'soweto', label: 'Soweto East', color: 'bg-teal-500' },
+    { id: 'lindi', label: 'Lindi Village', color: 'bg-amber-500' },
+    { id: 'makina', label: 'Makina Village', color: 'bg-emerald-600' },
+    { id: 'silanga', label: 'Silanga Village', color: 'bg-blue-500' },
+    { id: 'laini-saba', label: 'Laini Saba', color: 'bg-purple-500' },
+    { id: 'sarango', label: 'Sarango\'eni', color: 'bg-indigo-500' }
   ];
 
   const timeRanges = [
@@ -578,19 +582,19 @@ function CitizenDataPage() {
             <div className={`rounded-2xl p-4 ${
               darkMode ? 'glass-green-card' : 'glass-light-card'
             }`}>
-              <h3 className="text-sm font-semibold text-emerald-300 mb-4">Trending Issues</h3>
+              <h3 className="text-sm font-semibold text-emerald-300 mb-4">Trending Issues by Village</h3>
               <div className="space-y-3">
                 {[
-                  { issue: 'Water Supply', count: 324, trend: 'rising', color: 'bg-red-500' },
-                  { issue: 'Sanitation', count: 287, trend: 'stable', color: 'bg-green-500' },
-                  { issue: 'Waste Management', count: 198, trend: 'rising', color: 'bg-amber-500' },
-                  { issue: 'Infrastructure', count: 156, trend: 'stable', color: 'bg-blue-500' },
-                  { issue: 'Health Services', count: 124, trend: 'declining', color: 'bg-purple-500' },
+                  { issue: 'Kianda Water', count: 324, village: 'Kianda', trend: 'rising', color: 'bg-red-500' },
+                  { issue: 'Soweto Sanitation', count: 287, village: 'Soweto', trend: 'stable', color: 'bg-green-500' },
+                  { issue: 'Makina Waste', count: 198, village: 'Makina', trend: 'rising', color: 'bg-amber-500' },
+                  { issue: 'Lindi Roads', count: 156, village: 'Lindi', trend: 'stable', color: 'bg-blue-500' },
+                  { issue: 'Silanga Health', count: 124, village: 'Silanga', trend: 'declining', color: 'bg-purple-500' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center justify-between group hover:bg-emerald-900/20 p-2 rounded-lg transition-colors">
-                    <div className="flex items-center space-x-2">
-                      <div className={`h-2 w-2 rounded-full ${item.color}`}></div>
-                      <span className="text-sm text-emerald-200 group-hover:text-white">{item.issue}</span>
+                    <div className="flex-1">
+                      <div className="text-sm text-emerald-200 group-hover:text-white">{item.issue}</div>
+                      <div className="text-xs text-emerald-300/50">{item.village} Village</div>
                     </div>
                     <div className="flex items-center space-x-2">
                       <span className="text-sm font-medium text-white">{item.count}</span>

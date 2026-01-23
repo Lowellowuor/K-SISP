@@ -19,13 +19,16 @@ function Dashboard() {
   const [fullscreen, setFullscreen] = useState(false);
   const [selectedMetric, setSelectedMetric] = useState(null);
 
-  // Sample data
+  // Updated with real Kibera location names
   const zones = [
-    { id: 'all', label: 'All Zones', color: 'bg-emerald-500' },
-    { id: 'north', label: 'North Zone', color: 'bg-green-500' },
-    { id: 'south', label: 'South Zone', color: 'bg-teal-500' },
-    { id: 'east', label: 'East Zone', color: 'bg-amber-500' },
-    { id: 'west', label: 'West Zone', color: 'bg-emerald-600' },
+    { id: 'all', label: 'All Villages', color: 'bg-emerald-500' },
+    { id: 'kianda', label: 'Kianda Village', color: 'bg-green-500' },
+    { id: 'soweto', label: 'Soweto East', color: 'bg-teal-500' },
+    { id: 'lindi', label: 'Lindi Village', color: 'bg-amber-500' },
+    { id: 'makina', label: 'Makina Village', color: 'bg-emerald-600' },
+    { id: 'silanga', label: 'Silanga Village', color: 'bg-blue-500' },
+    { id: 'laini-saba', label: 'Laini Saba', color: 'bg-purple-500' },
+    { id: 'sarango', label: 'Sarango\'eni', color: 'bg-indigo-500' }
   ];
 
   // Auto-refresh effect
